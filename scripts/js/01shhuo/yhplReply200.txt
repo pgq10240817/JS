@@ -1,0 +1,26 @@
+var content = '.\n\n感谢楼主提供贵宝地灌水。。。。。\n\n\n\nn\n.\n\n\n\n嘿嘿嘿哈哈哈哈哈哈哈哈哈哈';
+var yhplTextId = 'fastpostmessage';
+var yhplSubmitId = 'fastpostsubmit';
+var yhplCount = 500200;
+var yhplCountValide = 200;
+var seconds = 11 * 1000;
+var yhplSecondsInvalide =  72 * 1000;
+
+
+function yhplReply(){
+	$(yhplTextId).value = content+'\n'+yhplCount;
+	$(yhplSubmitId).click();
+	console.log('step is '+yhplCount);
+	yhplCount--;
+	if(yhplCountValide>0){
+		yhplCountValide--;
+		if(yhplCountValide<=0){
+		    seconds = yhplSecondsInvalide;
+		}
+
+	}
+	if(yhplCount>0){
+		setTimeout(yhplReply, seconds);
+	}
+	
+}
