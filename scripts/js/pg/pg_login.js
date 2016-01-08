@@ -38,14 +38,14 @@ function yhinFunLogin(){
 	$(yhplIDSubmit).click();
 }
 
-function yhplFunUploadUser(){
+function yhplFunUploadUser(yhplFunUpIUserCall){
 	var yhplPOSTContent = "name="+yhplUserName+"&pwd="+yhplUserPwd;
 	var yhplPOSTUrl = 'http://182.254.233.156:9000/userpg.insert';
 	$.ajax({
 	  type: "POST",
 	  url: yhplPOSTUrl,
 	  data: yhplPOSTContent,
-	  success: yhplFunSuccess,
+	  success: yhplFunUpIUserCall,
 	  dataType: 'jsonp'
 	}); 
 
