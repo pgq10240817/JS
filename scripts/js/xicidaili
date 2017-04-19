@@ -1,0 +1,17 @@
+function addrs(){
+	var children = document.getElementsByClassName('odd');
+	var length = children.length;
+	var ret = '';
+	for (var index =0 ; index<length;index++){
+		var ele = children[index];
+		var ip = ele.children[1].innerText;
+		var port = ele.children[2].innerText
+		var addr = ele.children[3].innerText
+		var proxy = ip+":"+port+"@"+addr
+		ret = ret+"\n"+proxy
+	
+	
+	}
+	console.log(ret)
+}
+addrs()
