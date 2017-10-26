@@ -1,0 +1,12 @@
+pwd
+ssh-agent
+eval $(ssh-agent)
+ssh-add /d/yhpl/config/.ssh/private_rsa
+
+git config --global user.email "jks@me.com"
+git config --global user.name "JKS"
+git add -A
+git commit -m "JKS"
+eval $(git push defaultRepo :jks)
+#echo $deleteRet
+git push -v defaultRepo jks:jks

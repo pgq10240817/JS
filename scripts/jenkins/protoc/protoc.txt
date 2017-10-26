@@ -1,0 +1,54 @@
+buildFile="build.log"
+buildHash=""
+if [ ! -f "$buildFile" ]; then
+ 	echo "$buildFile not exist, so create"
+ 	touch "$buildFile"
+else
+	buildHash=$(cat "$buildFile")
+fi
+if [ $buildHash = $GIT_COMMIT ];then
+	echo "$buildHash has build so ingore"
+	#exit 100
+else
+	echo $GIT_COMMIT
+fi
+commitLineFormat=$(git log -3 --pretty=format:"%H------%s------%cd")
+echo "$commitLineFormat"
+commitHash=${commitLineFormat%%------*}
+commitMsgDate=${commitLineFormat#*------}
+commitMsg=${commitMsgDate%%------*}
+commitMsgOpt=$(echo "$commitMsg" | tr -d [:space:])
+commitMsgPrefix=${commitMsg:0:3}
+commitMsgPrefixIngoreCase=$(echo "$commitMsgPrefix" | tr 'A-Z' 'a-z')
+
+if [ $commitMsgPrefixIngoreCase = "bld" ]; then
+	echo 'will build'
+else
+	echo 'ingore this commit'
+	exit 100
+fi
+echo "####begin generate java oc files####"
+
+ProtoPath="proto"
+OCPath="oc"
+CODE=0
+JavaPath="java"
+for file in `ls "$ProtoPath"`
+do
+	fileAtDir=$ProtoPath"/"$file
+	if [ -f $fileAtDir ]
+	echo $fileAtDir
+	then
+		ret=$(protoc --proto_path=$ProtoPath --java_out=$JavaPath --objc_out=$OCPath $fileAtDir)
+		echo $ret
+	else
+		echo 'not a file "$fileAtDir"'
+	fi
+done
+
+buildFile="build.log"
+buildHash=$GIT_COMMIT
+echo $buildHash>$buildFile
+echo "finish"
+exit $CODE
+echo "####end generate java oc files####"
