@@ -1,0 +1,22 @@
+Private Sub RegEx_Replace()
+
+     Dim myRegExp As Object
+     Dim Myrange As Range, C As Range
+     Set myRegExp = CreateObject("vbscript.regexp")
+     
+     
+     Set Myrange = ActiveSheet.Range("A1:A6")
+     Set MyPasterCells = ActiveSheet.Range("B1:B6")
+     RowsCount = Myrange.Rows.Count
+     For Postion = 1 To RowsCount
+         TextSrc = Myrange.Cells(Postion, 1).Value
+         Set C = MyPasterCells.Cells(Postion, 1)
+         myRegExp.Pattern = "\d+"
+         Set myMatches = myRegExp.Execute(TextSrc)
+         If myMatches.Count >= 1 Then
+             Set myMatch = myMatches(0)
+             C.Value = myMatch
+         End If
+       
+     Next
+End Sub
