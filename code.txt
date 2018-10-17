@@ -1,0 +1,19 @@
+function setCookie(ROOT_COOKIE){
+    var oldCookie = document.cookie;
+    if (oldCookie.indexOf("anythe2Info")>0){
+        console.log('has cookie');
+    } else {
+        console.log(oldCookie);
+        var cookies = ROOT_COOKIE.split(';')
+        var length = cookies.length;
+        for (var i =0; i<length;i++){
+            document.cookie = cookies[i] + '; path=/; domain=.shangxueba.com';
+        }
+    }
+}
+
+setCookie("Hm_lvt_ccdda4ee34254acf0834dc87f2429bc8=1539609774,1539653470; CheckCode=; safedog-flow-item=; anythe2Info=anythe2cday=13088641827&anythe2pday=ea1bf5004f2058a49d3e9695cb4efb49&anythe2pid=6658211&loginDate=2018/10/16 9:31:22; msg_count=0; Hm_lpvt_ccdda4ee34254acf0834dc87f2429bc8=1539661937");
+
+window.location.reload()
+
+//这里末尾回车
