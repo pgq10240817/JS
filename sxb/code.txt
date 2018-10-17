@@ -16,4 +16,4 @@ setCookie("Hm_lvt_ccdda4ee34254acf0834dc87f2429bc8=1539609774,1539653470; CheckC
 
 window.location.reload()
 
-//这里末尾回车
+//以上全部复制到浏览器，然后在这句话末尾回车
