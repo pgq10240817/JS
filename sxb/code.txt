@@ -1,3 +1,2 @@
-function setCookie(e){var f=new Date();f.setTime(f.getTime()+6*3600*1000);var a="expires="+f.toGMTString();var d=e.split(";");var c=d.length;for(var b=0;b<c;b++){document.cookie=d[b]+"; path=/; domain=.shangxueba.com; "+a}console.log("set success");window.location.reload()};setCookie("Hm_lvt_ccdda4ee34254acf0834dc87f2429bc8=1539609774,1539653470; CheckCode=; safedog-flow-item=; anythe2Info=anythe2cday=13088641827&anythe2pday=ea1bf5004f2058a49d3e9695cb4efb49&anythe2pid=6658211&loginDate=2018/10/16 9:31:22; msg_count=0; Hm_lpvt_ccdda4ee34254acf0834dc87f2429bc8=1539661937");
 
-//ctrl+a，ctrl+c，全选复制内容粘贴到浏览器运行，有效期6小时以上
+//代码已经失效 ctrl+a，ctrl+c，全选复制内容粘贴到浏览器运行，有效期6小时以上
