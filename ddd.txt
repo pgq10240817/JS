@@ -1,0 +1,3 @@
+function setCookie(e){var f=new Date();f.setTime(f.getTime()+6*3600*1000);var a="expires="+f.toGMTString();var d=e.split(";");var c=d.length;for(var b=0;b<c;b++){document.cookie=d[b]+"; path=/; domain=.shangxueba.com; "+a}console.log("set success");window.location.reload()};setCookie("anythe2Info=anythe2cday=17358576121&anythe2pday=1b437c220a793cb6f3be217ac7f589fa&anythe2pid=6799357&loginDate=2018/11/9 0:57:56;");
+
+ // ctrl+a，ctrl+c，全选复制内容粘贴到浏览器运行，有效期2小时以上,2018-11-10
